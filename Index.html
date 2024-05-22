@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue aux promotions de Mercadona</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenue aux promotions de Mercadona</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#Catalogue">Catalogue</a></li>
+            <li><a href="#Administrateur">Administrateur</a></li>
+        </ul>
+    </nav>
+    <div id="Catalogue">
+        <h3>Catalogue</h3>
+        <div class="Product">
+            <img src="Catalogue/Produit/Banane.jpg" alt="Banane">
+            <p>Banane 5€/kg</p>
+        </div>
+        <div class="Product">
+            <img src="Catalogue/Produit/Bière.jpg" alt="Bière">
+            <p>Bière 5€/Pack</p>
+        </div>
+        <div class="Product">
+            <img src="Catalogue/Produit/Concombre.jpg" alt="Concombre">
+            <p>Concombre 3€/kg</p>
+        </div>
+        <div class="Product">
+            <img src="Catalogue/Produit/Friandises.jpg" alt="Friandises">
+            <p>Friandises 2€/kg</p>
+        </div>
+        <div class="Product">
+            <img src="Catalogue/Produit/Mandarine.jpg" alt="Mandarine">
+            <p>Mandarine 4€/kg</p>
+        </div>
+        <div class="Product">
+            <img src="Catalogue/Produit/Noix.jpg" alt="Noix">
+            <p>Noix 5€/kg</p>
+        </div>
+        <div class="Product">
+            <img src="Catalogue/Produit/Poire.jpg" alt="Poire">
+            <p>Poire 3€/kg</p>
+        </div>
+        <div class="Product">
+            <img src="Catalogue/Produit/Rhum.jpg" alt="Rhum">
+            <p>Rhum 20€ la bouteille</p>
+        </div>
+        <div class="Product">
+            <img src="Catalogue/Produit/Spiritueux.jpg" alt="Spiritueux">
+            <p>Spiritueux 25€ la bouteille</p>
+        </div>
+    </div>
+    <div id="Administrateur" style="display: none;">
+        <h2>Espace Administrateur</h2>
+        <h2>Consulter les produits en promotion</h2>
+        <select id="categories" onchange="populateProducts()">
+            <option value="" disabled selected hidden>Choisir une catégorie</option>
+            <option value="Boissons">Boissons</option>
+            <option value="Boulangerie">Boulangerie</option>
+            <option value="Charcuterie">Charcuterie</option>
+            <option value="Féculents">Féculents</option>
+            <option value="Fruits">Fruits</option>
+            <option value="Légumes">Légumes</option>
+            <option value="Poisson">Poisson</option>
+            <option value="Viande">Viande</option>
+        </select>
+        <select id="products" onchange="updatePrice()">
+            <option value="" disabled selected hidden>Choisir un produit</option>
+        </select>
+        <label for="price">Prix :</label>
+        <input type="number" id="price" disabled>
+        <label for="start_date">Date de début de promotion :</label>
+        <input type="date" id="start_date">
+        <label for="end_date">Date de fin de promotion :</label>
+        <input type="date" id="end_date">
+        <select id="promotion" class="promotion">
+            <option value="" disabled selected hidden>Promotion</option>
+            <option value="-20">-20%</option>
+            <option value="-30">-30%</option>
+            <option value="-40">-40%</option>
+            <option value="-10">-10%</option>
+            <option value="-50">-50%</option>
+            <option value="-15">-15%</option>
+        </select>
+        <label for="new-price">Nouveau prix :</label>
+        <input type="number" id="new-price" disabled>
+        <button onclick="applyPromotion()" class="apply-button">Appliquer la promotion</button>
+    </div>
+    <footer class="footer">
+        <p>&copy; Copyright Mercadona 2024</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
