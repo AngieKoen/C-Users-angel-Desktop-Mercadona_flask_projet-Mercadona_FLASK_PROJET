@@ -1,0 +1,46 @@
+
+from app import db, Product
+
+def init_db():
+    db.create_all()
+
+    products = [
+        Product(name='Banane', price=5.0, description='Banane 5€/kg', image_url='Catalogue/Produit/Banane.jpg'),
+        Product(name='Bière', price=5.0, description='Bière 5€/Pack', image_url='Catalogue/Produit/Bière.jpg'),
+        Product(name='Concombre', price=3.0, description='Concombre 3€/kg', image_url='Catalogue/Produit/Concombre.jpg'),
+        Product(name='Friandises', price=2.0, description='Friandises 2€/kg', image_url='Catalogue/Produit/Friandises.jpg'),
+        Product(name='Mandarine', price=4.0, description='Mandarine 4€/kg', image_url='Catalogue/Produit/Mandarine.jpg'),
+        Product(name='Noix', price=5.0, description='Noix 5€/kg', image_url='Catalogue/Produit/Noix.jpg'),
+        Product(name='Poire', price=3.0, description='Poire 3€/kg', image_url='Catalogue/Produit/Poire.jpg'),
+        Product(name='Rhum', price=20.0, description='Rhum 20€ la bouteille', image_url='Catalogue/Produit/Rhum.jpg'),
+        Product(name='Spiritueux', price=25.0, description='Spiritueux 25€ la bouteille', image_url='Catalogue/Produit/Spiritueux.jpg'),
+        Product(name='Jus', price=2.0, description='Jus 2€ le litre', image_url='Catalogue/Produit/Jus.jpg'),
+        Product(name='Sodas', price=1.8, description='Soda 1.8€ la bouteille', image_url='Catalogue/Produit/Soda.jpg'),
+        Product(name='Pain', price=1.0, description='Pain 1€ le pain', image_url='Catalogue/Produit/Pain.jpg'),
+        Product(name='Sandwich', price=1.2, description='Sandwich 1.2€ le Sandwich', image_url='Catalogue/Produit/Sandwich.jpg'),
+        Product(name='Pâtisseries', price=2.5, description='Pâtisseries 2.5€ la pièce', image_url='Catalogue/Produit/Pâtisseries.jpg'),
+        Product(name='Saucisson', price=3.5, description='Saucisson 3.5€/kg', image_url='Catalogue/Produit/Saucisson.jpg'),
+        Product(name='Jambon', price=4.0, description='Jambon 4€/kg', image_url='Catalogue/Produit/Jambon.jpg'),
+        Product(name='Pâté', price=2.8, description='Pâté 2.8€/kg', image_url='Catalogue/Produit/Pâté.jpg'),
+        Product(name='Riz', price=2.2, description='Riz 2.2€/kg', image_url='Catalogue/Produit/Riz.jpg'),
+        Product(name='Pâtes', price=1.8, description='Pâtes 1.8€/kg', image_url='Catalogue/Produit/Pâtes.jpg'),
+        Product(name='Pommes de terre', price=1.5, description='Pommes de terre 1.5€/kg', image_url='Catalogue/Produit/Pommes de terre.jpg'),
+        Product(name='Pommes', price=1.2, description='Pommes 1.2€/kg', image_url='Catalogue/Produit/Pommes.jpg'),
+        Product(name='Fraises', price=1.0, description='Fraises 1.0€/kg', image_url='Catalogue/Produit/Fraises.jpg'),
+        Product(name='Oranges', price=1.3, description='Oranges 1.3€/kg', image_url='Catalogue/Produit/Oranges.jpg'),
+        Product(name='Carottes', price=1.0, description='Carottes 1.0€/kg', image_url='Catalogue/Produit/Carottes.jpg'),
+        Product(name='Tomates', price=1.2, description='Tomates 1.2€/kg', image_url='Catalogue/Produit/Tomates.jpg'),
+        Product(name='Salade', price=1.5, description='Salade 1.5€/kg', image_url='Catalogue/Produit/Salade.jpg'),
+        Product(name='Saumon', price=5.0, description='Saumon 5.0€/kg', image_url='Catalogue/Produit/Saumon.jpg'),
+        Product(name='Thon', price=4.5, description='Thon 4.5€/kg', image_url='Catalogue/Produit/Thon.jpg'),
+        Product(name='Crevettes', price=6.0, description='Crevettes 6.0€/kg', image_url='Catalogue/Produit/Crevettes.jpg'),
+        Product(name='Poulet rôti', price=3.0, description='Poulet rôti 3.0€/kg', image_url='Catalogue/Produit/Poulet rôti.jpg'),
+        Product(name='Steak haché', price=8.0, description='Steak haché 8.0€/kg', image_url='Catalogue/Produit/Steak haché.jpg'),
+        Product(name='Saucisses', price=6.5, description='Saucisses 6.5€/kg', image_url='Catalogue/Produit/Saucisses.jpg')
+    ]
+
+    db.session.bulk_save_objects(products)
+    db.session.commit()
+
+if __name__ == '__main__':
+    init_db()
